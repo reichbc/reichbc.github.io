@@ -63,13 +63,20 @@
             <a href="https://placeholder-url.com"><img src="https://r2.cfbrandon.ninja/cdn-cgi/image/w=75,h=75/content/Cloudflare_Logo.png" alt="Link 5"></a>
             <a href="https://placeholder-url.com"><img src="https://r2.cfbrandon.ninja/cdn-cgi/image/w=75,h=75/content/Cloudflare_Logo.png" alt="Link 6"></a>
         </div>
-        <div class="navbar-subtext">
+        <div class="navbar-subtext" id="origin-pool">
             <div>Cloudflare Load Balancer</div>
-            <div style="font-size: 14px;">Origin Pool: placeholder</div>
+            <div style="font-size: 14px;">Origin Pool: <span id="requested-url">placeholder</span></div>
         </div>
     </div>
     <div class="header">
         <h1>Brandon's Cloudflare Test Site</h1>
     </div>
+    
+    <script>
+        // Get the requested URL and update the Origin Pool placeholder
+        const requestedUrl = window.location.href;
+        const originPoolText = document.getElementById("requested-url");
+        originPoolText.textContent = requestedUrl;
+    </script>
 </body>
 </html>
